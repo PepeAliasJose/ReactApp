@@ -80,7 +80,11 @@ const Reloj = () => {
 
     //Devuelve el reloj
     return (  
-        <div className='reloj'>
+        <div className='reloj' style={{
+            borderBottom: "solid 1px gray",
+            paddingBottom: "20px",
+            width: "600px"
+        }}>
             <p>Temporizador de 2 minutos</p>
             <div className='' style={{
                 fontSize: "100px",
