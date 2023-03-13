@@ -1,12 +1,14 @@
-import Reloj from './Reloj';
-import './App.css';
+import Navbar from './Navbar';
+import Home from './Home';
 
 function App() {
+
   return (
     <div className="App">
-      <center>
-        <Reloj/>
-      </center>
+      <Navbar/> {/*Componente navbar creado antes*/}
+      <div className="content">
+        <Home/> {/*Componente home*/}
+      </div>
     </div>
   );
 }
