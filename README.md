@@ -1,2 +1,2 @@
 # ReactApp
- Aplicacion usando react y node 
+ Aplicacion usando react 
