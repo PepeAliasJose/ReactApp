@@ -10,8 +10,12 @@ const useFetch = (url) => {
 
      //useEfect se ejecuta cuando se rerenderiza algun componente
      useEffect(() => {
+
+        //abort controller
+        const abortCont = new AbortController();
+
         setTimeout(() => {
-            fetch(url)
+            fetch(url, { signal: abortCont.signal })
             .then((res) =>{
                 if(!res.ok){
                     throw Error("No se ha podido acceder a los datos de ese recurso");
@@ -24,11 +28,19 @@ const useFetch = (url) => {
                 setError(null);
             })
             .catch((err) => {
-                setError(err.message);
-                setIsPending(false);
+                if(err.name == 'AbortError'){
+                    console.log('Fetch aborted');
+                }else{
+                    setError(err.message);
+                    setIsPending(false);
+                }
+                
             });
-        },1000)
-            
+        },1000);
+           
+
+        return () => abortCont.abort();
+        
     }, [url]);
 
 

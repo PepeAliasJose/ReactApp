@@ -4,7 +4,7 @@ const BlogList = ({blogs,title,/*handleDelete*/}) => {
         <div className="blog-list">
             <h2>{title}</h2>
             {/*Map un diccionario*/}
-            {/*La funcion map recorre el dinccionario dandole un nombre a cada objeto de este donde poder sacar sus propiedades*/}
+            {/*La funcion map recorre el diccionario dandole un nombre a cada objeto de este donde poder sacar sus propiedades*/}
             {blogs.map((blog) => (
                 <div className="blog-preview" key={blog.id} >
                 <h2>{blog.title}</h2>
